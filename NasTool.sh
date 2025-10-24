@@ -74,7 +74,8 @@ docker rm -f jackett qbittorrent nastools &>/dev/null
 
 # 1. 部署 Jackett
 echo "正在拉取 Jackett 镜像..."
-docker pull linuxserver/jackett:latest || { echo "错误: 无法拉取 Jackett 镜像，请检查网络。"; exit 1; }
+# docker pull linuxserver/jackett:latest || { echo "错误: 无法拉取 Jackett 镜像，请检查网络。"; exit 1; }
+docker pull lscr.io/linuxserver/jackett:latest || { echo "错误: 无法拉取 Jackett 镜像，请检查网络。"; exit 1; }
 echo "正在部署 Jackett 容器..."
 docker run -d \
   --name=jackett \
@@ -88,7 +89,7 @@ docker run -d \
 
 # 2. 部署 Qbittorrent
 echo "正在拉取 Qbittorrent 镜像..."
-docker pull linuxserver/qbittorrent:latest || { echo "错误: 无法拉取 Qbittorrent 镜像，请检查网络。"; exit 1; }
+docker pull lscr.io/linuxserver/qbittorrent:latest || { echo "错误: 无法拉取 Qbittorrent 镜像，请检查网络。"; exit 1; }
 echo "正在部署 Qbittorrent 容器..."
 docker run -d \
   --name=qbittorrent \
@@ -106,7 +107,7 @@ docker run -d \
 
 # 3. 部署 NASTOOLS
 echo "正在拉取 NASTOOLS 镜像..."
-docker pull hsuyelin/nas-tools || { echo "错误: 无法拉取 NASTOOLS 镜像，请检查网络。"; exit 1; }
+docker pull swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/hsuyelin/nas-tools || { echo "错误: 无法拉取 NASTOOLS 镜像，请检查网络。"; exit 1; }
 echo "正在部署 NASTOOLS 容器..."
 docker run -d \
   --name=nastools \
