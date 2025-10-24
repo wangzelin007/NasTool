@@ -14,7 +14,7 @@ echo "  多服务一键部署脚本 - 映射统一版"
 echo "========================================="
 
 # 脚本所在目录将作为所有文件的根目录
-DEPLOY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DEPLOY_DIR="/volumn1"
 DOCKER_BASE_DIR="$DEPLOY_DIR/docker"
 MEDIA_BASE_DIR="$DEPLOY_DIR/media"
 
