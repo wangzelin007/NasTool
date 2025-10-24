@@ -85,7 +85,7 @@ docker run -d \
   -e PGID=$PGID \
   -e TZ=Asia/Shanghai \
   -v $JACKETT_CONFIG_DIR:/config \
-  linuxserver/jackett:latest
+  lscr.io/linuxserver/jackett:latest
 
 # 2. 部署 Qbittorrent
 echo "正在拉取 Qbittorrent 镜像..."
@@ -103,7 +103,7 @@ docker run -d \
   -e WEBUI_PORT=8080 \
   -v $QBITTORRENT_CONFIG_DIR:/config \
   -v $MEDIA_BASE_DIR:/media \
-  linuxserver/qbittorrent:latest
+  lscr.io/linuxserver/qbittorrent:latest
 
 # 3. 部署 NASTOOLS
 echo "正在拉取 NASTOOLS 镜像..."
@@ -120,7 +120,7 @@ docker run -d \
   -e RUN_MODE=release \
   -v $NASTOOLS_CONFIG_DIR:/config \
   -v $MEDIA_BASE_DIR:/media \
-  hsuyelin/nas-tools
+  swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/hsuyelin/nas-tools
 
 if [ $? -eq 0 ]; then
     echo -e "\n========================================="
